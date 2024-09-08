@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DESKTOP-3GEU2IQ",
+            "database": "shindengg",
+            "username": "postgres",
+            "password": "yo4457942",
+            "connectionTimeout": 30
+        }
+    ]
+}
