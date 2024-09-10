@@ -1,10 +1,10 @@
 const express = require('express');
-const { createPlayer, getPlayers, getPlayerById } = require('../Player/PlayerController');
+const { createPlayerHandler, getPlayersHandler, getPlayerByIdHandler } = require('../Player/PlayerHandler');
 const router = express.Router();
 
-router.post('/players', createPlayer); // Crear un jugador
-router.get('/players', getPlayers); // Obtener todos los jugadores
-router.get('/players/:id', getPlayerById); // Obtener jugador por ID
+router.post('/players', createPlayerHandler); // Crear un jugador
+router.get('/players', getPlayersHandler); // Obtener todos los jugadores
+router.get('/players/:id', getPlayerByIdHandler); // Obtener jugador por ID
 
 module.exports = router;
 

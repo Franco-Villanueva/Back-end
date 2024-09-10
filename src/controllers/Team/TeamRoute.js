@@ -1,9 +1,9 @@
 const express = require('express');
-const { createTeam, getTeams, getTeamById } = require('../Team/TeamController');
+const { createTeamHandler, getTeamByIdHandler, getTeamsHandler } = require('../Team/TeamHandler');
 const router = express.Router();
 
-router.post('/teams', createTeam); // Crear un equipo
-router.get('/teams', getTeams); // Obtener todos los equipos
-router.get('/teams/:id', getTeamById); // Obtener equipo por ID
+router.post('/teams', createTeamHandler); // Crear un equipo
+router.get('/teams', getTeamsHandler); // Obtener todos los equipos
+router.get('/teams/:id', getTeamByIdHandler); // Obtener equipo por ID
 
 module.exports = router;

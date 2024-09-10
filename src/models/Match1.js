@@ -1,31 +1,40 @@
-// src/models/Match.js
+// src/models/Match1.js
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    return sequelize.define('Match', {
+    return sequelize.define('Match1', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
+        competition: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         date: {
             type: DataTypes.DATE,
             allowNull: false,
         },
-        matchType: {
-            type: DataTypes.ENUM('Valorant', 'Fortnite', 'CS2'),
+        teamAId: {
+            type: DataTypes.INTEGER,
             allowNull: false,
+            references: {
+                model: 'Teams',
+                key: 'id',
+            },
         },
-        position: {
+        teamBId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'Teams',
+                key: 'id',
+            },
+        },
+        result: {
             type: DataTypes.STRING,
-        },
-        scoreA: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        scoreB: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
     }, {
         timestamps: false,

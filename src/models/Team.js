@@ -14,6 +14,10 @@ module.exports = (sequelize) => {
             allowNull: false,
             unique: true,
         },
+        img: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
         game: {
             type: DataTypes.ENUM('Valorant', 'Fortnite', 'CS2'),
             allowNull: false,

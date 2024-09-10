@@ -1,40 +1,33 @@
 const { Team } = require('../../DB');
 
-// Crear un nuevo equipo
-const createTeam = async (req, res) => {
-
-  const { name, game } = req.body;
-  console.log(name, game)
+// Lógica para crear un equipo
+const createTeam = async (name, game) => {
   try {
     const newTeam = await Team.create({ name, game });
-    res.status(201).json({ exito: 'Se creó con éxito' });
+    return newTeam;
   } catch (error) {
-    console.error('Error al crear el equipo:', error);
-    res.status(500).json({ error: 'Error al crear el equipo.' });
+    throw new Error('Error al crear el equipo: ' + error.message);
   }
 };
 
-// Obtener todos los equipos
-const getTeams = async (req, res) => {
+// Lógica para obtener todos los equipos
+const getTeams = async () => {
   try {
     const teams = await Team.findAll();
-    res.status(200).json(teams);
+    return teams;
   } catch (error) {
-    res.status(500).json({ error: 'Error al obtener los equipos.' });
+    throw new Error('Error al obtener los equipos: ' + error.message);
   }
 };
 
-// Obtener un equipo por ID
-const getTeamById = async (req, res) => {
-  const { id } = req.params;
+// Lógica para obtener un equipo por ID
+const getTeamById = async (id) => {
   try {
     const team = await Team.findByPk(id);
-    if (!team) {
-      return res.status(404).json({ error: 'Equipo no encontrado.' });
-    }
-    res.status(200).json(team);
+    if (!team) throw new Error('Equipo no encontrado.');
+    return team;
   } catch (error) {
-    res.status(500).json({ error: 'Error al obtener el equipo.' });
+    throw new Error('Error al obtener el equipo: ' + error.message);
   }
 };
 

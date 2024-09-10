@@ -1,47 +1,41 @@
 const { Player, Team } = require('../../DB');
 
-// Crear un nuevo jugador
-const createPlayer = async (req, res) => {
-  const { name, role, nationality, age, teamId } = req.body;
+// Lógica para crear un nuevo jugador
+const createPlayer = async (name, role, nationality, age, teamId) => {
   try {
     const team = await Team.findByPk(teamId);
-    if (!team) {
-      return res.status(404).json({ error: 'Equipo no encontrado.' });
-    }
+    if (!team) throw new Error('Equipo no encontrado.');
+    
     const newPlayer = await Player.create({ name, role, nationality, age, teamId });
-    res.status(201).json(newPlayer);
+    return newPlayer;
   } catch (error) {
-    res.status(500).json({ error: 'Error al crear el jugador.' });
+    throw new Error('Error al crear el jugador: ' + error.message);
   }
 };
 
-// Obtener todos los jugadores
-const getPlayers = async (req, res) => {
+// Lógica para obtener todos los jugadores
+const getPlayers = async () => {
   try {
     const players = await Player.findAll({
       include: { model: Team, as: 'team' }
     });
-    res.status(200).json(players);
+    return players;
   } catch (error) {
-    console.error('Error al obtener los jugadores:', error); // Añade un console.error para depuración
-    res.status(500).json({ error: 'Error al obtener los jugadores.' });
+    throw new Error('Error al obtener los jugadores: ' + error.message);
   }
 };
 
-// Obtener un jugador por ID
-const getPlayerById = async (req, res) => {
-  const { id } = req.params;
+// Lógica para obtener un jugador por ID
+const getPlayerById = async (id) => {
   try {
     const player = await Player.findByPk(id, {
       include: { model: Team, as: 'team' }
     });
-    if (!player) {
-      return res.status(404).json({ error: 'Jugador no encontrado.' });
-    }
-    res.status(200).json(player);
+    if (!player) throw new Error('Jugador no encontrado.');
+    
+    return player;
   } catch (error) {
-    console.error("Error al obtener el jugador:", error); // Imprime el error en la consola
-    res.status(500).json({ error: 'Error al obtener el jugador.' });
+    throw new Error('Error al obtener el jugador: ' + error.message);
   }
 };
 
