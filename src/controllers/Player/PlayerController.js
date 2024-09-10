@@ -18,9 +18,12 @@ const createPlayer = async (req, res) => {
 // Obtener todos los jugadores
 const getPlayers = async (req, res) => {
   try {
-    const players = await Player.findAll();
+    const players = await Player.findAll({
+      include: { model: Team, as: 'team' }
+    });
     res.status(200).json(players);
   } catch (error) {
+    console.error('Error al obtener los jugadores:', error); // Añade un console.error para depuración
     res.status(500).json({ error: 'Error al obtener los jugadores.' });
   }
 };
@@ -37,6 +40,7 @@ const getPlayerById = async (req, res) => {
     }
     res.status(200).json(player);
   } catch (error) {
+    console.error("Error al obtener el jugador:", error); // Imprime el error en la consola
     res.status(500).json({ error: 'Error al obtener el jugador.' });
   }
 };

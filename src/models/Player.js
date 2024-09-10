@@ -24,6 +24,13 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        teamId: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'Teams',  // Nombre de la tabla que contiene los equipos
+              key: 'id',       // Llave primaria de la tabla de equipos
+            }
+          }
     }, {
         timestamps: false,
     });

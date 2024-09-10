@@ -31,16 +31,16 @@ matchModel(sequelize)
 
 const { Team, Player, Match } = sequelize.models;
 
+Team.hasMany(Player, { foreignKey: 'teamId', as: 'players' });
+Player.belongsTo(Team, { as: 'team', foreignKey: 'teamId' });
+
 Team.hasMany(Match, { foreignKey: 'teamAId', as: 'MatchesAsTeamA' });
 Team.hasMany(Match, { foreignKey: 'teamBId', as: 'MatchesAsTeamB' });
-
-// Relación entre jugadores y partidos de Fortnite
-Player.hasMany(Match, { foreignKey: 'playerId' });
-Match.belongsTo(Player, { foreignKey: 'playerId' });
-
-// Relación entre partidos y equipos
 Match.belongsTo(Team, { foreignKey: 'teamAId', as: 'TeamA' });
 Match.belongsTo(Team, { foreignKey: 'teamBId', as: 'TeamB' });
+
+Player.hasMany(Match, { foreignKey: 'playerId' });
+Match.belongsTo(Player, { foreignKey: 'playerId' });
 
 module.exports = {
    conn: sequelize, // Exporta la conexión como `conn`
