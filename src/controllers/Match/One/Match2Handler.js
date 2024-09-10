@@ -21,7 +21,16 @@ const getMatches2Handler = async () => {
     try {
         const matches = await Match2.findAll({
             include: [
-                { model: Player, attributes: ['name'], include: [{ model: Team, as: 'team', attributes: ['name', 'img'] }] }
+                { 
+                    model: Player, 
+                    attributes: ['name'], 
+
+                    include: 
+                    [{ model: Team, 
+                        as: 'team',
+                        attributes: ['name', 'img'] 
+                    }] 
+                }
             ]
         });
         return { status: 200, data: matches };

@@ -1,54 +1,77 @@
 // src/handlers/MatchFortniteHandler.js
-const { Match2, Player, Team } = require('../../../DB');
+const { Match1, Player, Team } = require('../../../DB');
 
 // Crear un nuevo partido de Fortnite
-const createMatch2Handler = async (data) => {
-    const { date, competition, scoreA, scoreB } = data;
+const createMatch1Handler = async (data) => {
+    const { competition, date, teamAId, teamBId, result } = data;
     try {
-        const player = await Player.findByPk(playerId);
-        if (!player) {
-            throw new Error('Jugador no encontrado.');
+        const teamA = await Team.findByPk(teamAId);
+        const teamB = await Team.findByPk(teamBId);
+
+        if (teamAId === teamBId) {
+            throw new Error('Los Teams no pueden ser los mismos.');
         }
-        const newMatch = await Match2.create({ date, competition, playerId, kills, position });
+        if (!teamA || !teamB) {
+            throw new Error('Team no encontrado.');
+        }
+        const newMatch = await Match1.create({ competition, date, teamAId, teamBId, result });
         return { status: 201, data: newMatch };
     } catch (error) {
-        throw new Error(error.message || 'Error al crear el partido de Fortnite.');
+        throw new Error(error.message || 'Error al crear Matchs.');
     }
 };
 
 // Obtener todos los partidos de Fortnite
-const getMatches2Handler = async () => {
+const getMatches1Handler = async () => {
     try {
-        const matches = await Match2.findAll({
+        const matches = await Match1.findAll({
             include: [
-                { model: Player, attributes: ['name'], include: [{ model: Team, as: 'team', attributes: ['name', 'img'] }] }
-            ]
+                {
+                    model: Team,
+                    as: 'teamA',  // Alias para teamA
+                    attributes: ['name', 'img'],
+                },
+                {
+                    model: Team,
+                    as: 'teamB',  // Alias para teamB
+                    attributes: ['name', 'img'],
+                },
+            ],
         });
         return { status: 200, data: matches };
     } catch (error) {
-        throw new Error(error.message || 'Error al obtener los partidos de Fortnite.');
+        throw new Error(error.message || 'Error al obtener los Matchs.');
     }
 };
 
 // Obtener un partido de Fortnite por ID
-const getMatch2ByIdHandler = async (id) => {
+const getMatch1ByIdHandler = async (id) => {
     try {
-        const match = await Match2.findByPk(id, {
+        const match = await Match1.findByPk(id,{
             include: [
-                { model: Player, attributes: ['name'], include: [{ model: Team, as: 'team', attributes: ['name', 'img'] }] }
-            ]
+                {
+                    model: Team,
+                    as: 'teamA',  // Alias para teamA
+                    attributes: ['name', 'img'],
+                },
+                {
+                    model: Team,
+                    as: 'teamB',  // Alias para teamB
+                    attributes: ['name', 'img'],
+                },
+            ],
         });
         if (!match) {
-            throw new Error('Partido de Fortnite no encontrado.');
+            throw new Error('Partido no encontrado.');
         }
         return { status: 200, data: match };
     } catch (error) {
-        throw new Error(error.message || 'Error al obtener el partido de Fortnite.');
+        throw new Error(error.message || 'Error al obtener Matchs.');
     }
 };
 
 module.exports = {
-    createMatch2Handler,
-    getMatches2Handler,
-    getMatch2ByIdHandler,
+    createMatch1Handler,
+    getMatches1Handler,
+    getMatch1ByIdHandler,
 };

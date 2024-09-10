@@ -40,8 +40,8 @@ Player.belongsTo(Team, { as: 'team', foreignKey: 'teamId' });
 Team.hasMany(Match1, { foreignKey: 'teamAId', as: 'MatchesAsTeamA' });
 Team.hasMany(Match1, { foreignKey: 'teamBId', as: 'MatchesAsTeamB' });
 
-Match1.belongsTo(Team, { foreignKey: 'teamAId', as: 'TeamA' });
-Match1.belongsTo(Team, { foreignKey: 'teamBId', as: 'TeamB' });
+Match1.belongsTo(Team, { as: 'teamA', foreignKey: 'teamAId' });
+Match1.belongsTo(Team, { as: 'teamB', foreignKey: 'teamBId' });
 
 Player.hasMany(Match2, { foreignKey: 'playerId' });
 Match2.belongsTo(Player, { foreignKey: 'playerId' });
