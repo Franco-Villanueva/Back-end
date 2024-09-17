@@ -47,7 +47,7 @@ Player.hasMany(Match2, { foreignKey: 'playerId' });
 Match2.belongsTo(Player, { foreignKey: 'playerId' });
 
 module.exports = {
-    conn: sequelize, // Exporta la conexión como `conn`
+    conn: sequelize, 
     Team,
     Player,
     Match1,

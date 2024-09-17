@@ -16,9 +16,12 @@ const initializeData = async () => {
 
     // Datos de ejemplo para jugadores
     const players = [
-      { name: 'Player 1',img: 'https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png', role: 'Attacker', nationality: 'USA', age: 25, teamId: createdTeams[0].id },
-      { name: 'Player 2',img: 'https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png', role: 'Defender', nationality: 'Canada', age: 28, teamId: createdTeams[1].id },
-      { name: 'Player 3',img:'https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png', role: 'Support', nationality: 'UK', age: 22, teamId: createdTeams[2].id }
+      { name: 'Player 1',nick:'zzk' ,img: 'https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png', role: 'Attacker', nationality: 'USA', age: 25, teamId: createdTeams[0].id },
+      { name: 'Player 11',nick:'zzk1' ,img: 'https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png', role: 'Attacker', nationality: 'USA', age: 25, teamId: createdTeams[0].id },
+      { name: 'Player 12',nick:'zzk2' ,img: 'https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png', role: 'Attacker', nationality: 'USA', age: 25, teamId: createdTeams[0].id },
+      { name: 'Player 13',nick:'zzk3' ,img: 'https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png', role: 'Attacker', nationality: 'USA', age: 25, teamId: createdTeams[0].id },
+      { name: 'Player 2',nick:'coscu' ,img: 'https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png', role: 'Defender', nationality: 'Canada', age: 28, teamId: createdTeams[1].id },
+      { name: 'Player 3',nick:'zeko' ,img:'https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png', role: 'Support', nationality: 'UK', age: 22, teamId: createdTeams[2].id }
     ];
 
     // Crear jugadores
