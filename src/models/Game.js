@@ -1,8 +1,7 @@
-
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    return sequelize.define('Team', {
+    return sequelize.define('Game', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -14,17 +13,10 @@ module.exports = (sequelize) => {
             allowNull: false,
             unique: true,
         },
-        logo: {
+        img: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: true,
         },
-        gameId: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'Games',
-              key: 'id',
-            },
-          },
     }, {
         timestamps: false,
     });

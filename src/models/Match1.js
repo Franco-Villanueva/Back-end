@@ -8,6 +8,13 @@ module.exports = (sequelize) => {
             autoIncrement: true,
             primaryKey: true,
         },
+        gameId: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'Games', // Nombre del modelo relacionado
+              key: 'id',
+            },
+        },
         competition: {
             type: DataTypes.STRING,
             allowNull: true

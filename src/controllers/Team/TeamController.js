@@ -1,9 +1,9 @@
-const { Team, Player } = require('../../DB');
+const { Team, Player, Game } = require('../../DB');
 
 // Lógica para crear un equipo
-const createTeam = async (name, game) => {
+const createTeam = async (name, game, logo,) => {
   try {
-    const newTeam = await Team.create({ name, game });
+    const newTeam = await Team.create({ name, game, logo});
     return newTeam;
   } catch (error) {
     throw new Error('Error al crear el equipo: ' + error.message);
@@ -13,7 +13,13 @@ const createTeam = async (name, game) => {
 // Lógica para obtener todos los equipos
 const getTeams = async () => {
   try {
-    const teams = await Team.findAll();
+    const teams = await Team.findAll({
+      include: {
+        model: Game,
+        as: 'Game',  // Alias de la relación con Game
+        attributes: ['id', 'name', 'img'],  // Campos específicos de Game
+      }
+    });
     return teams;
   } catch (error) {
     throw new Error('Error al obtener los equipos: ' + error.message);
@@ -24,11 +30,16 @@ const getTeams = async () => {
 const getTeamById = async (id) => {
   try {
     const team = await Team.findByPk(id, {
-      include: {
+      include: [{
         model: Player,
         as: 'players',  // Asegúrate de que el alias sea correcto según tu definición de relaciones
         attributes: ['id', 'name', 'nick', 'img', 'role', 'nationality', 'age'],  // Solo selecciona los campos que necesites
       },
+      {
+        model: Game,
+        as: 'Game',  // Alias de la relación con Game
+        attributes: ['id', 'name', 'img'],  // Campos específicos de Game
+      }]
     });
     if (!team) throw new Error('Equipo no encontrado.');
     return team;

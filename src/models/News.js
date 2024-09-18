@@ -24,6 +24,6 @@ module.exports = (sequelize) => {
       allowNull: true,
     }
   }, {
-    timestamps: true, // Para que Sequelize maneje createdAt y updatedAt
+    timestamps: true,
   });
 };

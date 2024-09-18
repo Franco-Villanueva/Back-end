@@ -8,6 +8,14 @@ module.exports = (sequelize) => {
             autoIncrement: true,
             primaryKey: true,
         },
+        gameId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+              model: 'Games',  // Nombre de la tabla relacionada
+              key: 'id'
+            }
+        },
         competition: {
             type: DataTypes.STRING,
             allowNull: true

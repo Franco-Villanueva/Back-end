@@ -1,9 +1,9 @@
 // src/handlers/MatchFortniteHandler.js
-const { Match1, Player, Team } = require('../../../DB');
+const { Match1, Team, Game } = require('../../../DB');
 
-// Crear un nuevo partido de Fortnite
+// Crear un nuevo partido
 const createMatch1Handler = async (data) => {
-    const { competition, date, teamAId, teamBId, result } = data;
+    const { gameId, competition, date, teamAId, teamBId, result } = data;
     try {
         const teamA = await Team.findByPk(teamAId);
         const teamB = await Team.findByPk(teamBId);
@@ -14,14 +14,13 @@ const createMatch1Handler = async (data) => {
         if (!teamA || !teamB) {
             throw new Error('Team no encontrado.');
         }
-        const newMatch = await Match1.create({ competition, date, teamAId, teamBId, result });
+        const newMatch = await Match1.create({ gameId, competition, date, teamAId, teamBId, result });
         return { status: 201, data: newMatch };
     } catch (error) {
         throw new Error(error.message || 'Error al crear Matchs.');
     }
 };
 
-// Obtener todos los partidos de Fortnite
 const getMatches1Handler = async () => {
     try {
         const matches = await Match1.findAll({
@@ -29,13 +28,18 @@ const getMatches1Handler = async () => {
                 {
                     model: Team,
                     as: 'teamA',  // Alias para teamA
-                    attributes: ['name', 'img'],
+                    attributes: ['name', 'logo'],
                 },
                 {
                     model: Team,
                     as: 'teamB',  // Alias para teamB
-                    attributes: ['name', 'img'],
+                    attributes: ['name', 'logo'],
                 },
+                {
+                    model: Game,
+                    as: 'Game',  // Alias de la relación con Game
+                    attributes: ['id', 'name', 'img'],  // Campos específicos de Game
+                  }
             ],
         });
         return { status: 200, data: matches };
@@ -44,7 +48,7 @@ const getMatches1Handler = async () => {
     }
 };
 
-// Obtener un partido de Fortnite por ID
+// Obtener un partido de id
 const getMatch1ByIdHandler = async (id) => {
     try {
         const match = await Match1.findByPk(id,{
@@ -52,13 +56,18 @@ const getMatch1ByIdHandler = async (id) => {
                 {
                     model: Team,
                     as: 'teamA',  // Alias para teamA
-                    attributes: ['name', 'img'],
+                    attributes: ['name', 'logo'],
                 },
                 {
                     model: Team,
                     as: 'teamB',  // Alias para teamB
-                    attributes: ['name', 'img'],
+                    attributes: ['name', 'logo'],
                 },
+                {
+                    model: Game,
+                    as: 'Game',  // Alias de la relación con Game
+                    attributes: ['id', 'name', 'img'],  // Campos específicos de Game
+                }
             ],
         });
         if (!match) {
