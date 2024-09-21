@@ -4,8 +4,8 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
     return sequelize.define('Match1', {
         id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4, // Genera un UUID por defecto
             primaryKey: true,
         },
         gameId: {

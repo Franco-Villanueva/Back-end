@@ -1,4 +1,4 @@
-const { createMatch1Handler, getMatches1Handler, getMatch1ByIdHandler } = require('./Match1Handler');
+const { createMatch1Handler, getMatches1Handler, deleteMatchHandler } = require('./Match1Handler');
 
 const createMatch = async (req, res) => {
     try {
@@ -18,18 +18,23 @@ const getMatches = async (req, res) => {
     }
 };
 
-const getMatchById = async (req, res) => {
-    const { id } = req.params;
+const deleteMatchById = async (req, res) => {
+    const { id } = req.params;  // Obtén el id del partido de los parámetros
     try {
-        const result = await getMatch1ByIdHandler(id);
-        res.status(result.status).json(result.data);
+        // Llama al manejador para eliminar el partido por id
+        const result = await deleteMatchHandler(id);
+
+        // Devuelve una respuesta exitosa si se eliminó
+        res.status(result.status).json({ message: 'Partido eliminado correctamente.' });
     } catch (error) {
+        // Maneja cualquier error durante el proceso de eliminación
         res.status(500).json({ error: error.message });
     }
 };
 
+
 module.exports = {
     createMatch,
     getMatches,
-    getMatchById,
+    deleteMatchById,
 };

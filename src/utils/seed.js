@@ -1,4 +1,4 @@
-const { Team, Player, Game } = require('../DB'); // Asegúrate de tener el modelo Game también
+const { Team, Player, Game, Match1, Match2 } = require('../DB'); // Asegúrate de tener Match1 y Match2 también
 
 const initializeData = async () => {
   try {
@@ -54,30 +54,6 @@ const initializeData = async () => {
         age: 25, 
         teamId: createdTeams[0].id 
       },
-      { name: 'Player 11', 
-        nick: 'zzk1', 
-        img: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726687859/Teams%20shindengg/pyu3lyqrfxal1ytlacva.png', 
-        role: 'Attacker', 
-        nationality: 'USA', 
-        age: 25, 
-        teamId: createdTeams[0].id 
-      },
-      { name: 'Player 12', 
-        nick: 'zzk2', 
-        img: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726687859/Teams%20shindengg/pyu3lyqrfxal1ytlacva.png', 
-        role: 'Attacker', 
-        nationality: 'USA', 
-        age: 25, 
-        teamId: createdTeams[0].id 
-      },
-      { name: 'Player 13', 
-        nick: 'zzk3', 
-        img: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726687859/Teams%20shindengg/pyu3lyqrfxal1ytlacva.png', 
-        role: 'Attacker', 
-        nationality: 'USA', 
-        age: 25, 
-        teamId: createdTeams[0].id 
-      },
       { name: 'Player 2', 
         nick: 'coscu', 
         img: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726687859/Teams%20shindengg/pyu3lyqrfxal1ytlacva.png', 
@@ -97,8 +73,58 @@ const initializeData = async () => {
     ];
 
     // Crear jugadores
-    await Promise.all(
+    const createdPlayers = await Promise.all(
       players.map(player => Player.create(player))
+    );
+
+    // Datos de ejemplo para partidos de equipo (Match1)
+    const matches1 = [
+      {
+        gameId: createdGames[0].id, // CS2
+        competition: 'CS2 Championship',
+        date: '2024-10-05T15:00:00Z',
+        teamAId: createdTeams[0].id, // Team Counter-Strike 2
+        teamBId: createdTeams[1].id, // Team Fortnite
+        result: '3-2'
+      },
+      {
+        gameId: createdGames[2].id, // Valorant
+        competition: 'Valorant Masters',
+        date: '2024-11-10T18:00:00Z',
+        teamAId: createdTeams[2].id, // Team Valorant
+        teamBId: createdTeams[0].id, // Team Counter-Strike 2
+        result: '1-1'
+      }
+    ];
+
+    // Crear partidos de equipo (Match1)
+    await Promise.all(
+      matches1.map(match => Match1.create(match))
+    );
+
+    // Datos de ejemplo para partidos individuales (Match2 - Fortnite)
+    const matches2 = [
+      {
+        gameId: createdGames[1].id, // Fortnite
+        competition: 'Fortnite World Cup',
+        date: '2024-10-20T20:00:00Z',
+        playerId: createdPlayers[1].id, // Player coscu
+        kills: 8,
+        position: 1
+      },
+      {
+        gameId: createdGames[1].id, // Fortnite
+        competition: 'Fortnite Pro-Am',
+        date: '2024-11-15T18:30:00Z',
+        playerId: createdPlayers[2].id, // Player zeko
+        kills: 5,
+        position: 2
+      }
+    ];
+
+    // Crear partidos individuales (Match2)
+    await Promise.all(
+      matches2.map(match => Match2.create(match))
     );
 
     console.log('Base de datos inicializada con datos de ejemplo.');
