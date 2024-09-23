@@ -1,9 +1,9 @@
 const { Team, Player, Game } = require('../../DB');
 
 // Lógica para crear un equipo
-const createTeam = async (name, game, logo,) => {
+const createTeam = async (name, logo, gameId ) => {
   try {
-    const newTeam = await Team.create({ name, game, logo});
+    const newTeam = await Team.create({ name, logo, gameId });
     return newTeam;
   } catch (error) {
     throw new Error('Error al crear el equipo: ' + error.message);

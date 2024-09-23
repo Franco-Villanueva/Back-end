@@ -1,12 +1,12 @@
 const { Player, Team } = require('../../DB');
 
 // Lógica para crear un nuevo jugador
-const createPlayer = async (name, role, nationality, age, teamId) => {
+const createPlayer = async (name, nick, img, role, nationality, age, teamId) => {
   try {
     const team = await Team.findByPk(teamId);
     if (!team) throw new Error('Equipo no encontrado.');
     
-    const newPlayer = await Player.create({ name, role, nationality, age, teamId });
+    const newPlayer = await Player.create({ name, nick, img, role, nationality, age, teamId });
     return newPlayer;
   } catch (error) {
     throw new Error('Error al crear el jugador: ' + error.message);

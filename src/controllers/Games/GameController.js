@@ -10,6 +10,16 @@ const createGame = async (req, res) => {
     }
 };
 
+const deleteGame = async (req, res) => {
+    try {
+        const result = await deleteGameHandler(req.body);
+        res.status(result.status).json(result.data);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+
 module.exports = {
   createGame,
 };
