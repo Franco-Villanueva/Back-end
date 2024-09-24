@@ -23,21 +23,43 @@ const initializeData = async () => {
     // Datos de ejemplo para equipos con la referencia a sus juegos
     const teams = [
       { 
-        name: 'Team Counter-Strike 2',
+        name: 'Shinden',
+        aka: 'Shindengg',
         logo: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726685923/Logos%20shindengg/mkmaixtljrwfu16bxjul.png', 
         gameId: createdGames[0].id // Asociar con CS2
       },
       { 
-        name: 'Team Fortnite', 
+        name: 'Shinden',
+        aka: 'Shindengg',
         logo: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726685923/Logos%20shindengg/mkmaixtljrwfu16bxjul.png', 
-        gameId: createdGames[1].id // Asociar con Fortnite
+        gameId: createdGames[1].id // Asociar con Fortnite (solo equipo propio)
       },
       { 
-        name: 'Team Valorant',  
+        name: 'Shinden',
+        aka: 'Shindengg',
         logo: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726685923/Logos%20shindengg/mkmaixtljrwfu16bxjul.png', 
         gameId: createdGames[2].id // Asociar con Valorant
       },
+      { 
+        name: 'Phoenix Knights',
+        aka: 'PKN',
+        logo: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726685923/Logos%20esports/pkn_logo.png', 
+        gameId: createdGames[0].id // Asociar con CS2
+      },
+      { 
+        name: 'Valor Titans',
+        aka: 'VLT',
+        logo: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726685923/Logos%20esports/vlt_logo.png', 
+        gameId: createdGames[2].id // Asociar con Valorant
+      },
+      { 
+        name: 'Shadow Foxes',
+        aka: 'SFX',
+        logo: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726685923/Logos%20esports/sfx_logo.png', 
+        gameId: createdGames[0].id // Asociar con CS2
+      }
     ];
+    
 
     // Crear equipos
     const createdTeams = await Promise.all(

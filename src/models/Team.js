@@ -12,7 +12,10 @@ module.exports = (sequelize) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+        },
+        aka: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         logo: {
             type: DataTypes.STRING,

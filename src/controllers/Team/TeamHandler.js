@@ -2,10 +2,10 @@ const { createTeam, getTeams, getTeamById } = require('./TeamController');
 
 // Handler para crear un nuevo equipo
 const createTeamHandler = async (req, res) => {
-  const { name, logo, gameId} = req.body;
+  const { name, aka, logo, gameId} = req.body;
 
   try {
-    const newTeam = await createTeam(name, logo, gameId);
+    const newTeam = await createTeam(name, aka, logo, gameId);
     return res.status(201).json({ message: 'Equipo creado con éxito', team: newTeam });
   } catch (error) {
     return res.status(500).json({ error: error.message });
