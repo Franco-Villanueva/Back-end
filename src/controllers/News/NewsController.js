@@ -35,8 +35,30 @@ const getNewsById = async (req, res) => {
   }
 };
 
+const deleteNewsId = async (id) => {
+  try {
+      // Verifica si el partido existe en Match1 o Match2
+      const news = await News.findByPk(id);
+
+
+      if (!game) {
+          throw new Error('Noticia no encontrada.');
+      }
+      else {
+          await news.destroy();
+      }
+
+
+      return { status: 204, message: 'Game eliminado exitosamente.' };
+      
+  } catch (error) {
+      throw new Error(error.message || 'Error al eliminar el partido.');
+  }
+};
+
 module.exports = {
   createNews,
   getAllNews,
   getNewsById,
+  deleteNewsId
 };

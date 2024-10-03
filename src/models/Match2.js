@@ -34,11 +34,11 @@ module.exports = (sequelize) => {
         },
         kills: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
         position: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
         
     }, {

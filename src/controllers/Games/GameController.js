@@ -1,5 +1,5 @@
 // src/controllers/GameController.js
-const { createGameHandler } = require('./GameHandler');
+const { createGameHandler, deleteGameHandler } = require('./GameHandler');
 
 const createGame = async (req, res) => {
     try {
@@ -22,4 +22,5 @@ const deleteGame = async (req, res) => {
 
 module.exports = {
   createGame,
+  deleteGame
 };

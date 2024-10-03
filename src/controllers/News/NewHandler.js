@@ -30,8 +30,19 @@ const getNewsByIdHandler = async (req, res) => {
   }
 };
 
+const deleteNewsIdHandler = async (req, res) => {
+  try {
+      const result = await deleteNewsId(req.body);
+      res.status(result.status).json(result.data);
+  } catch (error) {
+      res.status(500).json({ error: error.message });
+  }
+};
+
+
 module.exports = {
   createNewsHandler,
   getAllNewsHandler,
   getNewsByIdHandler,
+  deleteNewsIdHandler,
 };

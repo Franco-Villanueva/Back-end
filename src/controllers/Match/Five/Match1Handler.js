@@ -43,12 +43,12 @@ const getMatches1Handler = async () => {
                 {
                     model: Team,
                     as: 'teamA',
-                    attributes: ['name', 'logo'],
+                    attributes: ['name','aka', 'logo'],
                 },
                 {
                     model: Team,
                     as: 'teamB',
-                    attributes: ['name', 'logo'],
+                    attributes: ['name', 'aka', 'logo'],
                 },
                 {
                     model: Game,
