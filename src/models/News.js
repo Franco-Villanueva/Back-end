@@ -11,6 +11,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
     image: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -19,11 +23,7 @@ module.exports = (sequelize) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    videoUrl: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    }
   }, {
-    timestamps: true,
+    timestamps: false,
   });
 };

@@ -2,9 +2,9 @@ const { News } = require('../../DB');
 
 // Crear una noticia
 const createNews = async (req, res) => {
-  const { title, image, body, videoUrl } = req.body;
+  const { title, date, image, body, videoUrl } = req.body;
   try {
-    const newNews = await News.create({ title, image, body, videoUrl });
+    const newNews = await News.create({ title, date, image, body, videoUrl });
     return newNews;
   } catch (error) {
     throw new Error('Error al crear noticia: ' + error.message);
