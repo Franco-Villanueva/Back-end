@@ -38,7 +38,11 @@ module.exports = (sequelize) => {
               model: 'Teams',  // Nombre de la tabla que contiene los equipos
               key: 'id',       // Llave primaria de la tabla de equipos
             }
-          }
+        },
+        network: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: true,
+        },
     }, {
         timestamps: false,
     });

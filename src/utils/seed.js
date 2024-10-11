@@ -51,55 +51,67 @@ const initializeData = async () => {
 
     // Datos de ejemplo para jugadores
     const players = [
-      { name: 'Matias Muñis', 
+      { 
+        name: 'Matias Muñis', 
         nick: 'abizz', 
         img: 'https://img-cdn.hltv.org/playerbodyshot/Sicdo7ZniFq9jAoiaGKl8v.png?ixlib=java-2.1.0&w=400&s=3a2ffee8aa4dff76720bd842b3cfa3c8', 
         role: 'Player', 
         nationality: 'ARG', 
         age: 20, 
-        teamId: 1 
+        teamId: 1,
+        network: ['https://twitter.com/abizz', 'https://instagram.com/abizz']
       },
-      { name: 'Nicolas Cespedes', 
+      { 
+        name: 'Nicolas Cespedes', 
         nick: 'BK1', 
         img: 'https://img-cdn.hltv.org/playerbodyshot/vFColU8aDspSi4qJ79IV_9.png?ixlib=java-2.1.0&w=400&s=92979d5fb62d46917546e8601f4dd327', 
         role: 'Player', 
         nationality: 'ARG', 
         age: 25, 
-        teamId: 1
+        teamId: 1,
+        network: ['https://x.com/bk1cs', 'https://instagram.com/bk1x_x', 'https://www.twitch.tv/bk1__']
       },
-      { name: 'Santiago Barchiesi', 
+      { 
+        name: 'Santiago Barchiesi', 
         nick: 'relentless', 
         img: 'https://img-cdn.hltv.org/playerbodyshot/c3oI8YtRyICs-VU-4PDYX_.png?ixlib=java-2.1.0&w=400&s=fd73599e3f3242b24e3b349fbfd64387', 
         role: 'Player', 
         nationality: 'ARG', 
         age: 22, 
-        teamId: 1 
+        teamId: 1,
+        network: ['https://twitter.com/relentless', 'https://instagram.com/relentless']
       },
-      { name: 'Roy Salaverry', 
+      { 
+        name: 'Roy Salaverry', 
         nick: 'roy', 
         img: 'https://img-cdn.hltv.org/playerbodyshot/ybQNH5iI3enGt3OgTUcEzu.png?ixlib=java-2.1.0&w=400&s=c0e4e70fa7edcce6b9116733d367ae09', 
         role: 'Player', 
         nationality: 'ARG', 
         age: 20, 
-        teamId: 1 
+        teamId: 1,
+        network: ['https://twitter.com/roy', 'https://instagram.com/roy']
       },
-      { name: 'Ivan Quintana', 
+      { 
+        name: 'Ivan Quintana', 
         nick: 'ivz', 
         img: 'https://img-cdn.hltv.org/playerbodyshot/oTW7FWXBVWZwI0gjcr4NWk.png?ixlib=java-2.1.0&w=400&s=b01877b70555c01354bec63dd3ea6957', 
         role: 'Player', 
         nationality: 'ARG', 
         age: 21, 
-        teamId: 1 
+        teamId: 1,
+        network: ['https://twitter.com/ivz', 'https://instagram.com/ivz']
       },
-      { name: 'Lorenzo Rugo', 
+      { 
+        name: 'Lorenzo Rugo', 
         nick: 'RUGO', 
         img: 'https://img-cdn.hltv.org/playerbodyshot/8_6KksfJ96YX9gzOtdlhEd.png?ixlib=java-2.1.0&w=400&s=f81bff98aeb9b2f785b7e895af52e5a5', 
         role: 'Coach', 
         nationality: 'ARG', 
         age: 22, 
-        teamId: 1 
+        teamId: 1,
       }
     ];
+    
 
     // Crear jugadores
     const createdPlayers = await Promise.all(

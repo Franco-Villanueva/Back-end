@@ -2,10 +2,10 @@ const { createPlayer, getPlayers, getPlayerById } = require('./PlayerController'
 
 // Handler para crear un nuevo jugador
 const createPlayerHandler = async (req, res) => {
-  const { name, nick, img, role, nationality, age, teamId } = req.body;
+  const { name, nick, img, role, nationality, age, teamId, network } = req.body;
 
   try {
-    const newPlayer = await createPlayer(name, nick, img, role, nationality, age, teamId);
+    const newPlayer = await createPlayer(name, nick, img, role, nationality, age, teamId, network);
     return res.status(201).json(newPlayer);
   } catch (error) {
     return res.status(500).json({ error: error.message });

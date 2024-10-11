@@ -33,7 +33,7 @@ const getTeamById = async (id) => {
       include: [{
         model: Player,
         as: 'players',  // Asegúrate de que el alias sea correcto según tu definición de relaciones
-        attributes: ['id', 'name', 'nick', 'img', 'role', 'nationality', 'age'],  // Solo selecciona los campos que necesites
+        attributes: ['id', 'name', 'nick', 'img', 'role', 'nationality', 'age', 'network'],  // Solo selecciona los campos que necesites
       },
       {
         model: Game,
