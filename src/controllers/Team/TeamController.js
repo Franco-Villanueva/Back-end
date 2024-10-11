@@ -1,7 +1,7 @@
 const { Team, Player, Game } = require('../../DB');
 
 // Lógica para crear un equipo
-const createTeam = async (name, aka, logo, gameId ) => {
+const createTeam = async (name, aka, logo, gameId) => {
   try {
     const newTeam = await Team.create({ name, aka, logo, gameId });
     return newTeam;

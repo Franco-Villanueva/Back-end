@@ -59,7 +59,7 @@ const initializeData = async () => {
         nationality: 'ARG', 
         age: 20, 
         teamId: 1,
-        network: ['https://twitter.com/abizz', 'https://instagram.com/abizz']
+        network: ['https://x.com/abizzcs_', 'https://www.instagram.com/matiascusii/', 'https://www.twitch.tv/abizzfps']
       },
       { 
         name: 'Nicolas Cespedes', 
@@ -79,7 +79,7 @@ const initializeData = async () => {
         nationality: 'ARG', 
         age: 22, 
         teamId: 1,
-        network: ['https://twitter.com/relentless', 'https://instagram.com/relentless']
+        network: ['https://x.com/relentlessfps1', 'https://www.instagram.com/relentless_shc']
       },
       { 
         name: 'Roy Salaverry', 
@@ -89,7 +89,7 @@ const initializeData = async () => {
         nationality: 'ARG', 
         age: 20, 
         teamId: 1,
-        network: ['https://twitter.com/roy', 'https://instagram.com/roy']
+        network: ['https://x.com/roycs_', 'https://www.instagram.com/roysalaverry/']
       },
       { 
         name: 'Ivan Quintana', 
@@ -99,7 +99,7 @@ const initializeData = async () => {
         nationality: 'ARG', 
         age: 21, 
         teamId: 1,
-        network: ['https://twitter.com/ivz', 'https://instagram.com/ivz']
+        network: ['https://x.com/ivzquintana', 'https://www.instagram.com/quintanaivan1/']
       },
       { 
         name: 'Lorenzo Rugo', 
