@@ -192,8 +192,8 @@ const initializeData = async () => {
 
   const news = [
     {
-      title: 'New Update in Valorant Brings Exciting Features',
-      date: '2024-11-30T19:30:00Z' ,
+      title: 'New Update in Valorant Brings Exciting Features 12',
+      date: '2024-01-30T19:30:00Z' ,
       image: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726685959/Fondos%20shindengg/ag1zaq3oxqcqplenxfgz.webp',
       body: 'Riot Games has released a new update for Valorant with exciting features including new agents, maps, and enhanced game mechanics. This update is expected to balance the competitive scene.',
       videoUrl: 'https://example.com/videos/valorant-update.mp4',
@@ -223,7 +223,7 @@ const initializeData = async () => {
       title: 'Fortnite Championship Finals Announced',
       date: '2024-11-30T19:30:00Z',
       image: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726685959/Fondos%20shindengg/ag1zaq3oxqcqplenxfgz.webp',
-      body: 'Epic Games has officially announced the dates for the Fortnite Championship Finals. Players from around the world will compete for the ultimate title and a grand prize.',
+      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula magna vel justo faucibus, sit amet dapibus justo pretium. Nam convallis felis et felis auctor, quis luctus turpis feugiat. Curabitur ultricies, lorem vel dictum ultrices, nisl orci vehicula turpis, a cursus est leo vel enim. Suspendisse gravida vulputate elit ut sollicitudin. Donec luctus risus at ligula vulputate, nec vestibulum libero hendrerit. In et magna quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur accumsan lorem a nulla faucibus, vel ultricies sapien faucibus. Aenean vehicula sagittis magna, in tempor libero iaculis ac. Quisque maximus ligula sit amet risus vulputate interdum. Nam pharetra libero lorem, ac tincidunt augue pharetra nec. Donec consectetur tortor eget ipsum lobortis, a cursus arcu facilisis. Nullam sit amet tincidunt odio. Sed gravida, eros nec convallis fringilla, eros felis posuere lorem, vitae condimentum nunc sem sed neque. Fusce interdum fermentum lorem nec iaculis. Vivamus sagittis, felis eu varius interdum, metus est sodales nulla, sit amet viverra libero mauris ac erat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula magna vel justo faucibus, sit amet dapibus justo pretium. Nam convallis felis et felis auctor, quis luctus turpis feugiat. Curabitur ultricies, lorem vel dictum ultrices, nisl orci vehicula turpis, a cursus est leo vel enim. Suspendisse gravida vulputate elit ut sollicitudin. Donec luctus risus at ligula vulputate, nec vestibulum libero hendrerit. In et magna quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur accumsan lorem a nulla faucibus, vel ultricies sapien faucibus. Aenean vehicula sagittis magna, in tempor libero iaculis ac. Quisque maximus ligula sit amet risus vulputate interdum. Nam pharetra libero lorem, ac tincidunt augue pharetra nec. Donec consectetur tortor eget ipsum lobortis, a cursus arcu facilisis. Nullam sit amet tincidunt odio. Sed gravida, eros nec convallis fringilla, eros felis posuere lorem, vitae condimentum nunc sem sed neque. Fusce interdum fermentum lorem nec iaculis. Vivamus sagittis, felis eu varius interdum, metus est sodales nulla, sit amet viverra libero mauris ac erat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula magna vel justo faucibus, sit amet dapibus justo pretium. Nam convallis felis et felis auctor, quis luctus turpis feugiat. Curabitur ultricies, lorem vel dictum ultrices, nisl orci vehicula turpis, a cursus est leo vel enim. Suspendisse gravida vulputate elit ut sollicitudin. Donec luctus risus at ligula vulputate, nec vestibulum libero hendrerit. In et magna quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur accumsan lorem a nulla faucibus, vel ultricies sapien faucibus. Aenean vehicula sagittis magna, in tempor libero iaculis ac.',
       videoUrl: 'https://example.com/videos/fortnite-championship.mp4',
     },
     {
@@ -248,10 +248,10 @@ const initializeData = async () => {
       videoUrl: 'https://example.com/videos/fortnite-championship.mp4',
     },
     {
-      title: "CS2's Latest Patch Focuses on Anti-Cheat Measures",
+      title: "CS2's Latest Patch Focuses on Anti-Cheat Measures 123",
       date: '2024-11-30T19:30:00Z',
       image: null,
-      body: "Counter-Strike 2's latest patch focuses heavily on improving the anti-cheat system, aiming to provide a more fair and balanced experience for all players.",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula magna vel justo faucibus, sit amet dapibus justo pretium. Nam convallis felis et felis auctor, quis luctus turpis feugiat. Curabitur ultricies, lorem vel dictum ultrices, nisl orci vehicula turpis, a cursus est leo vel enim. Suspendisse gravida vulputate elit ut sollicitudin. Donec luctus risus at ligula vulputate, nec vestibulum libero hendrerit. In et magna quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur accumsan lorem a nulla faucibus, vel ultricies sapien faucibus. Aenean vehicula sagittis magna, in tempor libero iaculis ac. Quisque maximus ligula sit amet risus vulputate interdum. Nam pharetra libero lorem, ac tincidunt augue pharetra nec. Donec consectetur tortor eget ipsum lobortis, a cursus arcu facilisis. Nullam sit amet tincidunt odio. Sed gravida, eros nec convallis fringilla, eros felis posuere lorem, vitae condimentum nunc sem sed neque. Fusce interdum fermentum lorem nec iaculis. Vivamus sagittis, felis eu varius interdum, metus est sodales nulla, sit amet viverra libero mauris ac erat.",
       videoUrl: null,
     }
   ];

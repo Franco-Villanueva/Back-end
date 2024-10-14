@@ -14,7 +14,9 @@ const createNews = async (req, res) => {
 // Obtener todas las noticias
 const getAllNews = async (req, res) => {
     try {
-        const news = await News.findAll();
+      const news = await News.findAll({
+        order: [['date', 'DESC']]  // Ordena por la columna 'date' en orden descendente
+      });
 
         return news;
       } catch (error) {
