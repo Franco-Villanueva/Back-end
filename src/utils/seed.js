@@ -109,7 +109,17 @@ const initializeData = async () => {
         nationality: 'ARG', 
         age: 22, 
         teamId: 1,
-      }
+      },
+      { 
+        name: 'Tomás Petunchi', 
+        nick: 'Fazer', 
+        img: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726687859/Teams%20shindengg/pyu3lyqrfxal1ytlacva.png', 
+        role: 'Player', 
+        nationality: 'ARG', 
+        age: 21, 
+        teamId: 2,
+        network: ['https://x.com/fazerfn', 'https://www.instagram.com/toto_fazer/']
+      },
     ];
     
 
