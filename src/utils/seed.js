@@ -113,12 +113,32 @@ const initializeData = async () => {
       { 
         name: 'Tomás Petunchi', 
         nick: 'Fazer', 
-        img: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1726687859/Teams%20shindengg/pyu3lyqrfxal1ytlacva.png', 
+        img: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1729859564/Teams%20shindengg/rwwyneuk85q9ath5ipsx.png', 
         role: 'Player', 
         nationality: 'ARG', 
         age: 21, 
         teamId: 2,
         network: ['https://x.com/fazerfn', 'https://www.instagram.com/toto_fazer/']
+      },
+      { 
+        name: 'Ivan Buhajeruk', 
+        nick: 'Spreen', 
+        img: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1729859564/Teams%20shindengg/rwwyneuk85q9ath5ipsx.png', 
+        role: 'Streamer', 
+        nationality: 'ARG', 
+        age: 24, 
+        teamId: 3,
+        network: ['https://x.com/spreendmc', 'https://www.instagram.com/ivan_buhaje', 'https://kick.com/spreen']
+      },
+      { 
+        name: 'Mauro Monzón', 
+        nick: 'Lit Killah', 
+        img: 'https://res.cloudinary.com/df21bcvs0/image/upload/v1729859564/Teams%20shindengg/rwwyneuk85q9ath5ipsx.png', 
+        role: 'Streamer', 
+        nationality: 'ARG', 
+        age: 25, 
+        teamId: 3,
+        network: ['https://x.com/LITkillah', 'https://www.instagram.com/litkillah/?hl=es', 'https://kick.com/litkillah']
       },
     ];
     
