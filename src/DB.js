@@ -1,7 +1,6 @@
-const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+require('dotenv').config();
+
 const { Sequelize } = require('sequelize');
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 const teamModel = require('./models/Team');
 const playerModel = require('./models/Player');
 const match1Model = require('./models/Match1');
@@ -9,9 +8,20 @@ const match2Model = require('./models/Match2');
 const newsModel = require('./models/News');
 const gameModel = require('./models/Game')
 
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+
+// EJERCICIO 03
+// A la instancia de Sequelize le falta la URL de conexión. ¡Agrégala!
 const sequelize = new Sequelize(
-    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-    { logging: false, native: false, dialect: 'postgres' }
+    DB_NAME,           // Nombre de la base de datos
+    DB_USER,                  // Usuario de la base de datos
+    DB_PASSWORD,              // Contraseña del usuario
+    { 
+        host: DB_HOST,        // Host de la base de datos
+        dialect: "postgres",  // Tipo de base de datos
+        logging: false,       // Desactiva el logging si no lo necesitas
+        native: false         // Utiliza la opción nativa si es necesario
+    }
 );
 
 // Test de conexión
