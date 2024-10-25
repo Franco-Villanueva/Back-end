@@ -8,21 +8,22 @@ const match2Model = require('./models/Match2');
 const newsModel = require('./models/News');
 const gameModel = require('./models/Game')
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME , DB_PORT} = process.env;
 
 // EJERCICIO 03
 // A la instancia de Sequelize le falta la URL de conexión. ¡Agrégala!
-const sequelize = new Sequelize(
-    DB_NAME,           // Nombre de la base de datos
-    DB_USER,                  // Usuario de la base de datos
-    DB_PASSWORD,              // Contraseña del usuario
-    { 
-        host: DB_HOST,        // Host de la base de datos
-        dialect: "postgres",  // Tipo de base de datos
-        logging: false,       // Desactiva el logging si no lo necesitas
-        native: false         // Utiliza la opción nativa si es necesario
-    }
-);
+
+const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+    host: DB_HOST,
+    port: DB_PORT,
+    dialect: 'postgres',
+    // dialectOptions: {
+    //     // ssl: {
+    //     //     require: true,
+    //     //     rejectUnauthorized: false, // Esto puede variar dependiendo de tu configuración
+    //     // },
+    // },
+});
 
 // Test de conexión
 // async function testConnection() {
