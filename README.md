@@ -2,6 +2,8 @@
 
 **Shindengg Esports** es una plataforma dedicada a los seguidores del equipo de esports **Shindengg**, donde pueden consultar información sobre equipos, jugadores, noticias de torneos y próximos partidos. La aplicación ofrece una experiencia inmersiva con un calendario de eventos, detalles sobre equipos y jugadores, y noticias de interés del mundo esports.
 
+## DEMO: https://shindengg.vercel.app/
+
 ## 🚀 Tecnologías Utilizadas
 
 ### Frontend
