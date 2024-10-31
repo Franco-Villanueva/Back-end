@@ -4,21 +4,24 @@
 
 ## DEMO: https://shindengg.vercel.app/
 
+
+
 ## 🚀 Tecnologías Utilizadas
 
-### Frontend
+### Frontend : **https://github.com/Franco-Villanueva/shindengg**
 - **React**: Construcción de interfaces de usuario dinámicas.
 - **Tailwind CSS**: Estilización y diseño responsivo de los componentes.
 - **Framer Motion**: Animaciones en elementos interactivos.
 - **React Router**: Navegación entre las diferentes secciones de la plataforma.
 
-### Backend
+### Backend : **https://github.com/Franco-Villanueva/Back-end-SHINDENGG**
 - **Node.js con Express**: Creación del servidor y gestión de rutas de la API.
 - **Sequelize**: ORM para la conexión y administración de la base de datos.
 - **PostgreSQL**: Base de datos para almacenar información sobre jugadores, equipos, partidos y noticias.
 
 ### Implementación
 - **Render**: Plataforma de despliegue para el backend y la base de datos PostgreSQL.
+- **Vercel**: Plataforma de despliegue para el Frontend.
 
 ## 🌟 Características
 
